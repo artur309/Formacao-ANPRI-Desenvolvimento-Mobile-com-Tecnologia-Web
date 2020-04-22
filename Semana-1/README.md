@@ -1,2 +1,5 @@
-# Formacao ANPRI Desenvolvimento Mobile com Tecnologia Web
- Formacao ANPRI Desenvolvimento Mobile com Tecnologia Web
+Semana 1
+
+- Introdução do curso
+
+- Tarefa: Desenvolimento programa com Olá Mundo
