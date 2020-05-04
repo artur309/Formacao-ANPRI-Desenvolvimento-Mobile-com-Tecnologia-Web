@@ -1,5 +1,5 @@
-Semana 2
+Semana 3
 
-- Acoorderion
-
-- Tarefa: Desenvolimento lista telefonica
+-   Conversão (Estática -> Dinâmica) da app “Lista de Contactos”
+    
+-   Reformulação da app “Lista de Contactos” com página de detalhes 
