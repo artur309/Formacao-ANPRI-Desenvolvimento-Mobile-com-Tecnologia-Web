@@ -1,7 +1,7 @@
 {
-  "name": "ListaAlunos",
-  "short_name": "ListaAlunos",
-  "description": "ListaAlunos",
+  "name": "Tarefa1",
+  "short_name": "Tarefa1",
+  "description": "Tarefa1",
   "lang": "en-US",
   "start_url": "/",
   "display": "standalone",

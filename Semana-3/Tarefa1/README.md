@@ -1,4 +1,4 @@
-# ListaAlunos
+# Tarefa1
 
 ## Framework7 CLI Options
 
@@ -6,13 +6,13 @@ Framework7 app created with following options:
 
 ```
 {
-  "cwd": "C:\\Users\\artur\\Desktop\\Formacao-ANPRI-Desenvolvimento-Mobile-com-Tecnologia-Web\\Semana-2\\ListaAlunos",
+  "cwd": "C:\\Users\\artur\\Desktop\\Formacao-ANPRI-Desenvolvimento-Mobile-com-Tecnologia-Web\\Semana-3\\Tarefa1",
   "type": [
+    "web",
     "cordova",
-    "pwa",
-    "web"
+    "pwa"
   ],
-  "name": "ListaAlunos",
+  "name": "Tarefa1",
   "framework": "core",
   "template": "single-view",
   "bundler": "webpack",
