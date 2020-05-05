@@ -1,0 +1,50 @@
+[
+    {
+        "Num": "1",
+        "Nome": "Artur Quaresma",
+        "Mail": "artursquaresma@gmail.com",
+        "Telemovel": "935204395",
+        "Morada": "Portimão",
+        "Coordenadas": "28.419052,-81.579484"
+    },
+    {
+        "Num": "2",
+        "Nome": "Tiburcio",
+        "Mail": "tiburcio0canteiro@gmail.com",
+        "Telemovel": "931123213",
+        "Morada": "Lagoa",
+        "Coordenadas": "28.419052,-81.579484"
+    },
+    {
+        "Num": "3",
+        "Nome": "Banana Cat",
+        "Mail": "miauyellow@gmail.com",
+        "Telemovel": "940420987",
+        "Morada": "Portimão",
+        "Coordenadas": "28.419052,-81.579484"
+    },
+    {
+        "Num": "4",
+        "Nome": "Fernando Pessoa",
+        "Mail": "fernandopessoa@outlook.com",
+        "Telemovel": "910420420",
+        "Morada": "Lisboa",
+        "Coordenadas": "28.419052,-81.579484"
+    },
+    {
+        "Num": "5",
+        "Nome": "Tux",
+        "Mail": "linustorvalds@protonmail.com",
+        "Telemovel": "969345919",
+        "Morada": "Finlândia",
+        "Coordenadas": "28.419052,-81.579484"
+    },
+    {
+        "Num": "6",
+        "Nome": "Red Hot Chili Peppers",
+        "Mail": "rhcp@gmail.com",
+        "Telemovel": "960666123",
+        "Morada": "California",
+        "Coordenadas": "28.419052,-81.579484"
+    }
+]

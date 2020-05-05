@@ -1,12 +1,9 @@
 
 import HomePage from '../pages/home.f7.html';
-import AboutPage from '../pages/about.f7.html';
-import FormPage from '../pages/form.f7.html';
-
-
-import DynamicRoutePage from '../pages/dynamic-route.f7.html';
-import RequestAndLoad from '../pages/request-and-load.f7.html';
+import ContatosPage from '../pages/contatos.f7.html';
+import DetalhesPage from '../pages/detalhes.f7.html';
 import NotFoundPage from '../pages/404.f7.html';
+import ListAlunos from './alunos.json';
 
 var routes = [
   {
@@ -14,21 +11,7 @@ var routes = [
     component: HomePage,
   },
   {
-    path: '/about/',
-    component: AboutPage,
-  },
-  {
-    path: '/form/',
-    component: FormPage,
-  },
-
-
-  {
-    path: '/dynamic-route/blog/:blogId/post/:postId/',
-    component: DynamicRoutePage,
-  },
-  {
-    path: '/request-and-load/user/:userId/',
+    path: '/contatos/',
     async: function (routeTo, routeFrom, resolve, reject) {
       // Router instance
       var router = this;
@@ -40,42 +23,34 @@ var routes = [
       app.preloader.show();
 
       // User ID from request
-      var userId = routeTo.params.userId;
+      //var userId = routeTo.params.userId;
 
       // Simulate Ajax Request
-      setTimeout(function () {
-        // We got user data from request
-        var user = {
-          firstName: 'Vladimir',
-          lastName: 'Kharlampidi',
-          about: 'Hello, i am creator of Framework7! Hope you like it!',
-          links: [
-            {
-              title: 'Framework7 Website',
-              url: 'http://framework7.io',
-            },
-            {
-              title: 'Framework7 Forum',
-              url: 'http://forum.framework7.io',
-            },
-          ]
-        };
-        // Hide Preloader
-        app.preloader.hide();
 
-        // Resolve route to load page
-        resolve(
-          {
-            component: RequestAndLoad,
-          },
-          {
-            context: {
-              user: user,
-            }
+      var listaContatos = ListAlunos;
+      // Hide Preloader
+      app.preloader.hide();
+
+      // Resolve route to load page
+      resolve(
+        {
+          component: ContatosPage
+        },
+        {
+          context: {
+            listaContactos: listaContatos
           }
-        );
-      }, 1000);
-    },
+        }
+      );
+    }
+  },
+  {
+    path: '/',
+    component: ListAlunos,
+  },
+  {
+    path: '/contatos/detalhes',
+    component: DetalhesPage,
   },
   {
     path: '(.*)',

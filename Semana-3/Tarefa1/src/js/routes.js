@@ -2,7 +2,7 @@
 import HomePage from '../pages/home.f7.html';
 import ContatosPage from '../pages/contatos.f7.html';
 import NotFoundPage from '../pages/404.f7.html';
-import listContact from './alunos.json';
+import ListAlunos from './alunos.json';
 
 var routes = [
   {
@@ -26,7 +26,7 @@ var routes = [
 
       // Simulate Ajax Request
 
-      var listaContatos = listContact;
+      var listaContatos = ListAlunos;
       // Hide Preloader
       app.preloader.hide();
 
@@ -45,7 +45,7 @@ var routes = [
   },
   {
     path: '/',
-    component: listContact,
+    component: ListAlunos,
   },
   {
     path: '(.*)',
