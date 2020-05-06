@@ -6,56 +6,66 @@ import NotFoundPage from '../pages/404.f7.html';
 import ListAlunos from './alunos.json';
 
 var routes = [
-  {
-    path: '/',
-    component: HomePage,
-  },
-  {
-    path: '/contatos/',
-    async: function (routeTo, routeFrom, resolve, reject) {
-      // Router instance
-      var router = this;
+{
+	path: '/',
+	component: HomePage,
+},
+{
+	path: '/contatos/',
+	async: function (routeTo, routeFrom, resolve, reject) {
+		var router = this;
+		var app = router.app;
 
-      // App instance
-      var app = router.app;
+		app.preloader.show();
 
-      // Show Preloader
-      app.preloader.show();
+		var listaContatos = ListAlunos;
+		app.preloader.hide();
 
-      // User ID from request
-      //var userId = routeTo.params.userId;
+		resolve(
+		{
+			component: ContatosPage
+		},
+		{
+			context: {
+				listaContactos: listaContatos
+			}
+		}
+		);
+	}
+},
+{
+	path: '/',
+	component: ListAlunos,
+},
+{
+	path: '/detalhes/:Num/:Nome/:Mail/:Telemovel/:Morada/:Coordenadas/',
+	component: DetalhesPage,
+	async: function (routeTo, routeFrom, resolve, reject) {
+		var router = this;
 
-      // Simulate Ajax Request
+		var app = router.app;
 
-      var listaContatos = ListAlunos;
-      // Hide Preloader
-      app.preloader.hide();
+		app.preloader.show();
 
-      // Resolve route to load page
-      resolve(
-        {
-          component: ContatosPage
-        },
-        {
-          context: {
-            listaContactos: listaContatos
-          }
-        }
-      );
-    }
-  },
-  {
-    path: '/',
-    component: ListAlunos,
-  },
-  {
-    path: '/contatos/detalhes',
-    component: DetalhesPage,
-  },
-  {
-    path: '(.*)',
-    component: NotFoundPage,
-  },
+		var listaContatos = ListAlunos;
+		app.preloader.hide();
+
+		resolve(
+		{
+			component: ContatosPage
+		},
+		{
+			context: {
+				listaContactos: listaContatos
+			}
+		}
+		);
+	}
+},
+{
+	path: '(.*)',
+	component: NotFoundPage,
+},
 ];
 
 export default routes;

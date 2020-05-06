@@ -1,80 +1,76 @@
 <template>
-  <div class="page" data-name="about">
-    <div class="navbar">
-      <div class="navbar-bg"></div>
-      <div class="navbar-inner sliding">
-        <div class="left">
-          <a href="#" class="link back">
-            <i class="icon icon-back"></i>
-            <span class="if-not-md"></span>
-          </a>
-        </div>
-        <div class="title">Contatos</div>
-      </div>
-    </div>
-    <div class="page-content">
 
-      <div class="list accordion-list">
-        <ul class="appendListItem">
-          {{#each listaContactos}}
-          <li class="accordion-item">
-            <a href="#" class="item-content item-link">
-              <div class="item-media"><img src="static/img/contatos/{{Num}}.jpg" width="40px" class="lazy lazy-fade-in demo-lazy" /></div>
-              <div class="item-inner">
-                <div class="item-title row">
-                  <div class="item-title">{{Nome}}</div>
-                </div>
-                <div class="item-subtitle">N.º {{Num}}</div>
-              </div>
-            </a>
-            <div class="accordion-item-content">
-              <div class="block">
-                <div class="list">
-                  <ul>
-                    <li>
-                      <a href="malito:{Mail}}" class="item-link item-content external">
-                        <div class="item-content">
-                          <div class="item-media"><i class="f7-icons">envelope_fill</i></div>
-                          <div class="item-inner">{{Mail}}</div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="tel:{{Telemovel}}" class="item-link item-content external">
-                        <div class="item-content">
-                          <div class="item-media"><i class="f7-icons">phone_fill</i></div>
-                          <div class="item-inner">{{Telemovel}}</div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="sms:{{Telemovel}}" class="item-link item-content external">
-                        <div class="item-content">
-                          <div class="item-media"><i class="f7-icons">text_bubble_fill</i></div>
-                          <div class="item-inner">{{Telemovel}}</div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="geo:{{Coordenadas}}" class="item-link item-content external">
-                        <div class="item-content">
-                          <div class="item-media"><i class="f7-icons">location_north_fill</i></div>
-                          <div class="item-inner">{{Morada}}</div>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
+	<div class="page" data-name="about">
+		<div class="navbar">
+			<div class="navbar-bg"></div>
+			<div class="navbar-inner sliding">
+				<div class="left">
+					<a href="#" class="link back">
+						<i class="icon icon-back"></i>
+						<span class="if-not-md"></span>
+					</a>
+				</div>
+				<div class="title">Contatos</div>
+			</div>
+		</div>
 
-    </div>
-  </div>
-</template>
-<script>
-  export default {};
-</script>
+		<div class="block">
+			<div class="row">
+				<div class="col-100 small-40 medium-25">
+					<div style="margin:32px auto;">
+						<img style="width:100px; margin:0 auto; display:block" src="static/img/contatos/{{$route.params.Num}}.jpg" />
+						<h3 style="text-align: center;">N.º {{$route.params.Num}}, {{$route.params.Nome}}</h3>
+					</div>
+				</div>
+				<div class="col-100 small-60 medium-75">
+					<div class="list">
+						<ul>
+
+							<li>
+								<a href="mailto:{{$route.params.Mail}}" class="item-link item-content external">
+									<div class="item-media"><i class="material-icons">mail</i></div>
+									<div class="item-inner">
+										<div class="item-title">
+											<div class="item-header">Mail</div>
+											{{$route.params.Mail}}
+										</div>
+									</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="sms:{{$route.params.Telemovel}}" class="item-link item-content external">
+									<div class="item-media"><i class="material-icons">sms</i></div>
+									<div class="item-inner">
+										<div class="item-title">
+											<div class="item-header">SMS</div>
+											{{$route.params.Telemovel}}
+										</div>
+									</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="geo:{{$route.params.Coordenadas}}" class="item-link item-content external">
+									<div class="item-media"><i class="material-icons">navigation</i></div>
+									<div class="item-inner">
+										<div class="item-title">
+											<div class="item-header">Morada</div>
+											{{$route.params.Morada}}
+										</div>
+									</div>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="result-wrap-aluno"></div>
+	</template>
+
+	<script>
+		export default {};
+	</script>

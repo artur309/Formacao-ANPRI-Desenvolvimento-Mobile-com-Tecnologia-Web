@@ -51,3 +51,21 @@ var app = new Framework7({
     },
   },
 });
+
+
+//evento init da página contatos
+$$(document).on('page:init', '.page[data-name="contatos"]', function (e) {
+  //verificar que a página foi carregada
+  console.log('contatos');
+  // Indicar qual o template a utilizar
+  var template = $$('#template-aluno').html();
+  // Compilar e renderizar o template
+  var compiledTemplate = Template7.compile(template);
+  // Obter os dados do ficheiro JSON
+  app.request.json('alunos.json', function (json) {
+    // Verificar que os dados foram lidos
+    console.log(json);
+    // Inserir os dados no template
+    $$('#result-wrap-aluno').html(compiledTemplate(json))
+  });
+})
