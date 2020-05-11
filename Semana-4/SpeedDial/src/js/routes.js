@@ -1,86 +1,71 @@
 
 import HomePage from '../pages/home.f7.html';
-import AboutPage from '../pages/about.f7.html';
-import FormPage from '../pages/form.f7.html';
-
-
-import DynamicRoutePage from '../pages/dynamic-route.f7.html';
-import RequestAndLoad from '../pages/request-and-load.f7.html';
+import ContatosPage from '../pages/contatos.f7.html';
+import DetalhesPage from '../pages/detalhes.f7.html';
 import NotFoundPage from '../pages/404.f7.html';
+import ListAlunos from './alunos.json';
 
 var routes = [
-  {
-    path: '/',
-    component: HomePage,
-  },
-  {
-    path: '/about/',
-    component: AboutPage,
-  },
-  {
-    path: '/form/',
-    component: FormPage,
-  },
+{
+	path: '/',
+	component: HomePage,
+},
+{
+	path: '/contatos/',
+	async: function (routeTo, routeFrom, resolve, reject) {
+		var router = this;
+		var app = router.app;
 
+		app.preloader.show();
 
-  {
-    path: '/dynamic-route/blog/:blogId/post/:postId/',
-    component: DynamicRoutePage,
-  },
-  {
-    path: '/request-and-load/user/:userId/',
-    async: function (routeTo, routeFrom, resolve, reject) {
-      // Router instance
-      var router = this;
+		var listaContatos = ListAlunos;
+		app.preloader.hide();
 
-      // App instance
-      var app = router.app;
+		resolve(
+		{
+			component: ContatosPage
+		},
+		{
+			context: {
+				listaContactos: listaContatos
+			}
+		}
+		);
+	}
+},
+{
+	path: '/',
+	component: ListAlunos,
+},
+{
+	path: '/detalhes/:Num/:Nome/:Mail/:Telemovel/:Morada/:Coordenadas/',
+	component: DetalhesPage,
+	async: function (routeTo, routeFrom, resolve, reject) {
+		var router = this;
 
-      // Show Preloader
-      app.preloader.show();
+		var app = router.app;
 
-      // User ID from request
-      var userId = routeTo.params.userId;
+		app.preloader.show();
 
-      // Simulate Ajax Request
-      setTimeout(function () {
-        // We got user data from request
-        var user = {
-          firstName: 'Vladimir',
-          lastName: 'Kharlampidi',
-          about: 'Hello, i am creator of Framework7! Hope you like it!',
-          links: [
-            {
-              title: 'Framework7 Website',
-              url: 'http://framework7.io',
-            },
-            {
-              title: 'Framework7 Forum',
-              url: 'http://forum.framework7.io',
-            },
-          ]
-        };
-        // Hide Preloader
-        app.preloader.hide();
+		var listaContatos = ListAlunos;
+		app.preloader.hide();
 
-        // Resolve route to load page
-        resolve(
-          {
-            component: RequestAndLoad,
-          },
-          {
-            context: {
-              user: user,
-            }
-          }
-        );
-      }, 1000);
-    },
-  },
-  {
-    path: '(.*)',
-    component: NotFoundPage,
-  },
+		resolve(
+		{
+			component: ContatosPage
+		},
+		{
+			context: {
+				listaContactos: listaContatos
+			}
+		}
+		);
+	}
+},
+{
+	path: '(.*)',
+	component: NotFoundPage,
+},
 ];
 
 export default routes;

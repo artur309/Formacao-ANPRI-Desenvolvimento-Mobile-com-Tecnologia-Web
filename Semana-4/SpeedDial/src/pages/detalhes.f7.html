@@ -1,0 +1,76 @@
+<template>
+
+	<div class="page" data-name="about">
+		<div class="navbar">
+			<div class="navbar-bg"></div>
+			<div class="navbar-inner sliding">
+				<div class="left">
+					<a href="#" class="link back">
+						<i class="icon icon-back"></i>
+						<span class="if-not-md"></span>
+					</a>
+				</div>
+				<div class="title">Contatos</div>
+			</div>
+		</div>
+
+		<div class="block">
+			<div class="row">
+				<div class="col-100 small-40 medium-25">
+					<div style="margin:32px auto;">
+						<img style="width:100px; margin:0 auto; display:block" src="static/img/contatos/{{$route.params.Num}}.jpg" />
+						<h3 style="text-align: center;">N.º {{$route.params.Num}}, {{$route.params.Nome}}</h3>
+					</div>
+				</div>
+				<div class="col-100 small-60 medium-75">
+					<div class="list">
+						<ul>
+
+							<li>
+								<a href="mailto:{{$route.params.Mail}}" class="item-link item-content external">
+									<div class="item-media"><i class="material-icons">mail</i></div>
+									<div class="item-inner">
+										<div class="item-title">
+											<div class="item-header">Mail</div>
+											{{$route.params.Mail}}
+										</div>
+									</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="sms:{{$route.params.Telemovel}}" class="item-link item-content external">
+									<div class="item-media"><i class="material-icons">sms</i></div>
+									<div class="item-inner">
+										<div class="item-title">
+											<div class="item-header">SMS</div>
+											{{$route.params.Telemovel}}
+										</div>
+									</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="geo:{{$route.params.Coordenadas}}" class="item-link item-content external">
+									<div class="item-media"><i class="material-icons">navigation</i></div>
+									<div class="item-inner">
+										<div class="item-title">
+											<div class="item-header">Morada</div>
+											{{$route.params.Morada}}
+										</div>
+									</div>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="result-wrap-aluno"></div>
+	</template>
+
+	<script>
+		export default {};
+	</script>

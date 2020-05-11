@@ -8,9 +8,9 @@ Framework7 app created with following options:
 {
   "cwd": "C:\\Users\\artur\\Desktop\\Formacao-ANPRI-Desenvolvimento-Mobile-com-Tecnologia-Web\\Semana-4",
   "type": [
-    "web",
     "pwa",
-    "cordova"
+    "cordova",
+    "web"
   ],
   "name": "Speed Dial",
   "framework": "core",
