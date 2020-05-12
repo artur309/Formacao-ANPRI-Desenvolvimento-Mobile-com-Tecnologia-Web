@@ -10,6 +10,10 @@ import '../css/app.less';
 import '../css/styles.css';
 // Import Cordova APIs
 import cordovaApp from './cordova-app.js';
+
+// Import JQuery APIs
+import JQueryApp from './jquery-3.5.1.min.js';
+
 // Import Routes
 import routes from './routes.js';
 
@@ -50,24 +54,3 @@ var app = new Framework7({
 		},
 	},
 });
-
-//evento init da página contatos
-$('#btn').on('click', function(e) {
-	alert("Hello! I am an alert box!!");
-	console.log('test');
-	$('.contatosLista').toggleClass("visivel invisivel");
-});
-	/*//verificar que a página foi carregada
-	console.log('contatos');
-	// Indicar qual o template a utilizar
-	var template = $$('#template-aluno').html();
-	// Compilar e renderizar o template
-	var compiledTemplate = Template7.compile(template);
-	// Obter os dados do ficheiro JSON
-	app.request.json('alunos.json', function (json) {
-		// Verificar que os dados foram lidos
-		console.log(json);
-		// Inserir os dados no template
-		$$('#result-wrap-aluno').html(compiledTemplate(json))
-	});
-	*/

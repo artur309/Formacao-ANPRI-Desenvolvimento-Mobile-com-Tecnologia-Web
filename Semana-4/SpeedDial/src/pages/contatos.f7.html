@@ -13,33 +13,34 @@
 			</div>
 		</div>
 
-		<div class="page-content">
-
-			<div id="btn" class="fab fab-right-bottom color-yellow">
-				<!-- Abrir ou fechar -->
-				<a id="btn fab" href="#">
-					<!-- Icon quando está fechado -->
-					<i class="icon material-icons md-only">add</i>
-					<!-- Icon quando está aberto -->
-					<i class="icon material-icons md-only">close</i>
+		<!--menu flutuante -->
+		<div class="fab fab-right-bottom color-yellow">
+			<!-- Abrir ou fechar -->
+			<a id="fab" href="#" @click="toggleCheckBox">
+				<!-- Icon quando está fechado -->
+				<i class="icon material-icons md-only">add</i>
+				<!-- Icon quando está aberto -->
+				<i class="icon material-icons md-only">close</i>
+			</a>
+			<!-- FAB speed dial actions -->
+			<div class="fab-buttons fab-buttons-top">
+				<!-- Botão 1: Mail -->
+				<a href="#" id="mail" class="external">
+					<i class="material-icons">mail</i>
 				</a>
-				<!-- FAB speed dial actions -->
-				<div class="fab-buttons fab-buttons-top">
-					<!-- Botão 1: Mail -->
-					<a href="#" id="mail" class="external">
-						<i class="material-icons">mail</i>
-					</a>
-					<!-- Botão 2: SMS -->
-					<a href="#" id="sms" class="external">
-						<i class="material-icons">sms</i>
-					</a>
-					<!-- Botão 3: Telefone -->
-					<a href="#" id="tel" class="external">
-						<i class="material-icons">phone</i>
-					</a>
-				</div>
+				<!-- Botão 2: SMS -->
+				<a href="#" id="sms" class="external">
+					<i class="material-icons">sms</i>
+				</a>
+				<!-- Botão 3: Telefone -->
+				<a href="#" id="tel" class="external">
+					<i class="material-icons">phone</i>
+				</a>
 			</div>
+		</div>
 
+		<div class="page-content">
+			
 			<!--checkbox list-->
 			<div class="hideClass list accordion-list invisivel contatosLista">
 				<ul class="appendListItem">
@@ -94,21 +95,17 @@
 			</ul>
 		</div>
 
-
-
-
-	<script>
-		$$('#btn').on('click', function(e) {
-			alert("Hello! I am an alert box!!");
-			console.log('test');
-			$$('.contatosLista').toggleClass("visivel invisivel");
-		});
-	</script>
-
 		<div id="result-wrap-aluno"></div>
 
 	</template>
 
 	<script>
-		export default {};
+		import $$ from "dom7";
+		export default {
+			methods: {
+				toggleCheckBox: function () {
+					$$(".contatosLista").toggleClass("visivel invisivel");
+				},
+			},
+		};
 	</script>
