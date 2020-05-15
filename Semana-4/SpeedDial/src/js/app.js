@@ -54,3 +54,52 @@ var app = new Framework7({
 		},
 	},
 });
+
+$$(document).on("page:afterin", '.page[data-name="contatos"]', function (e) {
+  // Child checkbox change
+  $$('[name="checkboxAluno"]').on("change", function (e) {
+  	var totalChecked = $$('[name="checkboxAluno"]:checked').length;
+  	var totalChecks = $$('[name="checkboxAluno"]').length;
+  	console.log(totalChecked + "/" + totalChecks);
+  	if (totalChecked === 0)
+  		$$('[name="checkboxAlunos"]').prop("checked", false);
+  	else if (totalChecked === totalChecks)
+  		$$('[name="checkboxAlunos"]').prop("checked", true);
+
+  	if (totalChecked > 0 && totalChecked < totalChecks)
+  		$$('[name="checkboxAlunos"]').prop("indeterminate", true);
+  	else
+  		$$('[name="checkboxAlunos"]').prop("indeterminate", false);
+  });
+  
+  // Parent checkbox change
+  $$('[name="checkboxAlunos"]').on("change", function (e) {
+  	if (e.target.checked)
+  		$$('[name="checkboxAluno"]').prop("checked", true);
+  	else
+  		$$('[name="checkboxAluno"]').prop("checked", false);
+
+  });
+});
+
+
+/*
+$(document).on('change', '.smart-select-sheet .item-checkbox input[type="checkbox"]', function () {
+	var box = $(this).prop('checked');
+	var val = $(this).val();
+	var all = $(this).parents('ul').find('input[value="all"]');    
+	if (val == 'all') {
+		$(this).parents('ul').find('input[type="checkbox"]').filter(function (index, el) {
+			if (index != 0) {
+				$(el).prop('checked',box).trigger('change');
+			}
+		});
+	} else {
+		if (box == false) {
+			if (all.prop('checked') == true) {  
+				all.prop('checked',false).trigger('change');
+				$(this).prop('checked', true).trigger('change');
+			}
+		}
+	}
+});*/

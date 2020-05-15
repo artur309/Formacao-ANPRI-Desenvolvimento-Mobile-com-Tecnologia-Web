@@ -46,7 +46,7 @@
 				<ul class="appendListItem">
 					<li>
 						<label class="item-checkbox item-content">
-							<input type="checkbox" name="demo-checkbox-movies" />
+							<input type="checkbox" name="checkboxAlunos" />
 							<i class="icon icon-checkbox"></i>
 							<div class="item-inner">
 								<div class="item-title">Contatos</div>
@@ -56,7 +56,7 @@
 							{{#each listaContactos}}
 							<li class="list-item">
 								<label class="item-checkbox item-content" style="justify-content: unset !important;"> 
-									<input type="checkbox" name="demo-checkbox-movie" value="Movie 1"/>
+									<input type="checkbox" name="checkboxAluno" value="{{Num}}"/>
 									<i class="icon icon-checkbox"></i>
 									<a href="/detalhes/{{Num}}/{{Nome}}/{{Mail}}/{{Telemovel}}/{{Morada}}/{{Coordenadas}}/"
 									class="item-content item-link">
@@ -82,6 +82,7 @@
 					<li class="list-item">
 						<a href="/detalhes/{{Num}}/{{Nome}}/{{Mail}}/{{Telemovel}}/{{Morada}}/{{Coordenadas}}/"
 						class="item-content item-link">
+
 						<div class="item-media"><img style="width:40px" src="static/img/contatos/{{Num}}.jpg" /></div>
 						<div class="item-inner">
 							<div class="item-title row">
