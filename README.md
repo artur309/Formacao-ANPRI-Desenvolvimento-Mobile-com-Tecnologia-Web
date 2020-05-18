@@ -22,4 +22,18 @@
 
 -   Conversão (Estática -> Dinâmica) da app “Lista de Contactos”
     
--   Reformulação da app “Lista de Contactos” com página de detalhes 
+-   Reformulação da app “Lista de Contactos” com página de detalhes
+
+#
+
+# Semana 4
+
+-   Criacao menu flutuante SpeedDial
+    
+-   Reformulação da app “Lista de Contactos” com página de detalhes
+
+#
+
+# Semana 5
+
+-   Base Dados realtime Firebase
