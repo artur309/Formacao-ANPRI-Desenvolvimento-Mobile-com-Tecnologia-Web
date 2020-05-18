@@ -1,5 +1,17 @@
 # Formacao ANPRI Desenvolvimento Mobile com Tecnologia Web
 
+Ano letivo 2019/2020
+
+Ferramentas:
+
+- Framework7
+
+- Node.Js
+
+- Firebase
+
+#
+
 # Semana 1
 
 - Aprender os basico de HTML, CSS, JS e instalar os componentes pretendidos

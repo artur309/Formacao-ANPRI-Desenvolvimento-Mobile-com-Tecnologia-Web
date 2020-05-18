@@ -1,0 +1,112 @@
+<template>
+	<div class="page" data-name="about">
+		<div class="navbar">
+			<div class="navbar-bg"></div>
+			<div class="navbar-inner sliding">
+				<div class="left">
+					<a href="#" class="link back">
+						<i class="icon icon-back"></i>
+						<span class="if-not-md"></span>
+					</a>
+				</div>
+				<div class="title">Contatos</div>
+			</div>
+		</div>
+
+		<!--menu flutuante -->
+		<div class="fab fab-right-bottom color-yellow">
+			<!-- Abrir ou fechar -->
+			<a id="fab" href="#" @click="toggleCheckBox">
+				<!-- Icon quando está fechado -->
+				<i class="icon material-icons md-only">add</i>
+				<!-- Icon quando está aberto -->
+				<i class="icon material-icons md-only">close</i>
+			</a>
+			<!-- FAB speed dial actions -->
+			<div class="fab-buttons fab-buttons-top">
+				<!-- Botão 1: Mail -->
+				<a href="#" id="mail" class="external">
+					<i class="material-icons">mail</i>
+				</a>
+				<!-- Botão 2: SMS -->
+				<a href="#" id="sms" class="external">
+					<i class="material-icons">sms</i>
+				</a>
+				<!-- Botão 3: Telefone -->
+				<a href="#" id="tel" class="external">
+					<i class="material-icons">phone</i>
+				</a>
+			</div>
+		</div>
+
+		<div class="page-content">
+			
+			<!--checkbox list-->
+			<div class="hideClass list accordion-list invisivel contatosLista">
+				<ul class="appendListItem">
+					<li>
+						<label class="item-checkbox item-content">
+							<input type="checkbox" name="checkboxAlunos" />
+							<i class="icon icon-checkbox"></i>
+							<div class="item-inner">
+								<div class="item-title">Contatos</div>
+							</div>
+						</label>
+						<ul>
+							{{#each listaContactos}}
+							<li class="list-item">
+								<label class="item-checkbox item-content" style="justify-content: unset !important;"> 
+									<input type="checkbox" name="checkboxAluno" value="{{Num}}"/>
+									<i class="icon icon-checkbox"></i>
+									<a href="/detalhes/{{Num}}/{{Nome}}/{{Mail}}/{{Telemovel}}/{{Morada}}/{{Coordenadas}}/"
+									class="item-content item-link">
+									<div class="item-media"><img style="width:40px" src="static/img/contatos/{{Num}}.jpg" /></div>
+									<div class="item-inner">
+										<div class="item-title row">
+											<div class="item-title">{{Nome}}</div>
+										</div>
+										<div class="item-subtitle">N.º {{Num}}</div>
+									</div>
+								</a>
+							</label>
+						</li>
+						{{/each}}
+					</ul>
+				</li>
+			</ul></div>
+
+			<!--acoordion list-->
+			<div class="list accordion-list visivel contatosLista">
+				<ul class="appendListItem">
+					{{#each listaContactos}}
+					<li class="list-item">
+						<a href="/detalhes/{{Num}}/{{Nome}}/{{Mail}}/{{Telemovel}}/{{Morada}}/{{Coordenadas}}/"
+						class="item-content item-link">
+
+						<div class="item-media"><img style="width:40px" src="static/img/contatos/{{Num}}.jpg" /></div>
+						<div class="item-inner">
+							<div class="item-title row">
+								<div class="item-title">{{Nome}}</div>
+							</div>
+							<div class="item-subtitle">N.º {{Num}}</div>
+						</div>
+					</a>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+
+		<div id="result-wrap-aluno"></div>
+
+	</template>
+
+	<script>
+		import $$ from "dom7";
+		export default {
+			methods: {
+				toggleCheckBox: function () {
+					$$(".contatosLista").toggleClass("visivel invisivel");
+				},
+			},
+		};
+	</script>
