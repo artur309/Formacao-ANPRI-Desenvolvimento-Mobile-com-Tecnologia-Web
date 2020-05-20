@@ -40,7 +40,7 @@
 		</div>
 
 		<div class="page-content">
-			
+
 			<!--checkbox list-->
 			<div class="hideClass list accordion-list invisivel contatosLista">
 				<ul class="appendListItem">
@@ -55,25 +55,27 @@
 						<ul>
 							{{#each listaContactos}}
 							<li class="list-item">
-								<label class="item-checkbox item-content" style="justify-content: unset !important;"> 
-									<input type="checkbox" name="checkboxAluno" value="{{Num}}"/>
+								<label class="item-checkbox item-content" style="justify-content: unset !important;">
+									<input type="checkbox" name="checkboxAluno" value="{{Num}}" />
 									<i class="icon icon-checkbox"></i>
 									<a href="/detalhes/{{Num}}/{{Nome}}/{{Mail}}/{{Telemovel}}/{{Morada}}/{{Coordenadas}}/"
-									class="item-content item-link">
-									<div class="item-media"><img style="width:40px" src="static/img/contatos/{{Num}}.jpg" /></div>
-									<div class="item-inner">
-										<div class="item-title row">
-											<div class="item-title">{{Nome}}</div>
+										class="item-content item-link">
+										<div class="item-media"><img style="width:40px"
+												src="static/img/contatos/{{Num}}.jpg" /></div>
+										<div class="item-inner">
+											<div class="item-title row">
+												<div class="item-title">{{Nome}}</div>
+											</div>
+											<div class="item-subtitle">N.º {{Num}}</div>
 										</div>
-										<div class="item-subtitle">N.º {{Num}}</div>
-									</div>
-								</a>
-							</label>
-						</li>
-						{{/each}}
-					</ul>
-				</li>
-			</ul></div>
+									</a>
+								</label>
+							</li>
+							{{/each}}
+						</ul>
+					</li>
+				</ul>
+			</div>
 
 			<!--acoordion list-->
 			<div class="list accordion-list visivel contatosLista">
@@ -81,32 +83,45 @@
 					{{#each listaContactos}}
 					<li class="list-item">
 						<a href="/detalhes/{{Num}}/{{Nome}}/{{Mail}}/{{Telemovel}}/{{Morada}}/{{Coordenadas}}/"
-						class="item-content item-link">
+							class="item-content item-link">
 
-						<div class="item-media"><img style="width:40px" src="static/img/contatos/{{Num}}.jpg" /></div>
-						<div class="item-inner">
-							<div class="item-title row">
-								<div class="item-title">{{Nome}}</div>
+							<div class="item-media"><img style="width:40px" src="static/img/contatos/{{Num}}.jpg" />
 							</div>
-							<div class="item-subtitle">N.º {{Num}}</div>
-						</div>
-					</a>
-				</li>
-				{{/each}}
-			</ul>
-		</div>
+							<div class="item-inner">
+								<div class="item-title row">
+									<div class="item-title">{{Nome}}</div>
+								</div>
+								<div class="item-subtitle">N.º {{Num}}</div>
+							</div>
+						</a>
+					</li>
+					{{/each}}
+				</ul>
+			</div>
 
-		<div id="result-wrap-aluno"></div>
+			<div id="result-wrap-aluno"></div>
+				
+</template>
 
-	</template>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
 
-	<script>
-		import $$ from "dom7";
-		export default {
-			methods: {
-				toggleCheckBox: function () {
-					$$(".contatosLista").toggleClass("visivel invisivel");
-				},
+<!-- Cloud Firestore database Library JS -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
+
+<!-- Path to Framework7 Library Bundle JS-->
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/framework7/5.6.0/js/framework7.bundle.js"></script>
+<!-- Path to your app js-->
+<script type="text/javascript" src="js/my-app.js"></script>
+
+<script>
+	import $$ from "dom7";
+	export default {
+		methods: {
+			toggleCheckBox: function () {
+				$$(".contatosLista").toggleClass("visivel invisivel");
 			},
-		};
-	</script>
+		},
+	};
+</script>
