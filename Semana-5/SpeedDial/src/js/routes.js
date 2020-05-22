@@ -38,7 +38,7 @@ var routes = [
         .once("value")
         .then(function (snapshot) {
           //atribuir os dados lidos à variável json já usada anteriormente
-          listaContatos = JSON.stringify(snapshot.val());
+          listaContatos = snapshot.val();
 
           app.preloader.hide();
           // Verificar que os dados foram lidos
