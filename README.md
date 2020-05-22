@@ -1,5 +1,9 @@
 # Formacao ANPRI Desenvolvimento Mobile com Tecnologia Web
 
+**Utilizar `npm install` dentro de cada projeto para isntalar as dependências que faltam**
+
+
+
 Ano letivo 2019/2020
 
 Ferramentas:
@@ -24,28 +28,28 @@ Ferramentas:
 
 # Semana 2
 
--   Acoorderion
-    
--   Tarefa: Desenvolimento lista telefonica
+- Acoorderion
+
+- Tarefa: Desenvolimento lista telefonica
 
 #
 
 # Semana 3
 
--   Conversão (Estática -> Dinâmica) da app “Lista de Contactos”
-    
--   Reformulação da app “Lista de Contactos” com página de detalhes
+- Conversão (Estática -> Dinâmica) da app “Lista de Contactos”
+
+- Reformulação da app “Lista de Contactos” com página de detalhes
 
 #
 
 # Semana 4
 
--   Criacao menu flutuante SpeedDial
-    
--   Reformulação da app “Lista de Contactos” com página de detalhes
+- Criacao menu flutuante SpeedDial
+
+- Reformulação da app “Lista de Contactos” com página de detalhes
 
 #
 
 # Semana 5
 
--   Base Dados realtime Firebase
+- Base Dados realtime Firebase
