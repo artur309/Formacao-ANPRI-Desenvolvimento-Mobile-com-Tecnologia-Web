@@ -1,6 +1,6 @@
 # Formacao ANPRI Desenvolvimento Mobile com Tecnologia Web
 
-**Utilizar `npm install` dentro de cada projeto para isntalar as dependências que faltam**
+**Utilizar `npm install` dentro de cada projeto para instalar as dependências que faltam**
 
 
 
